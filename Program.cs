@@ -3,7 +3,7 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.SkillDefinition;
 using Microsoft.SemanticKernel.AI.TextCompletion;
 
-namespace Test
+namespace Prototype
 {
     public class Program
     {
@@ -15,7 +15,7 @@ namespace Test
 
                 var kernel = new KernelBuilder().WithOpenAITextCompletionService(configuration["modelId"], configuration["apiKey"], configuration["orgId"]).Build();
 
-                var function_definition = "Explain the Physics law '{{$input}}' with examples, like  explaining to a 5 year old kid.";
+                var function_definition = "Explain the Physics law '{{$input}}' with examples, like explaining to a 5 year old kid.";
 
                 var arguments = "Laws of Thermodynamics";
 
@@ -33,7 +33,7 @@ namespace Test
             }
             finally
             {
-                Console.WriteLine("Press any key to exit...");
+                Console.WriteLine("\n\nPress any key to exit...");
 
                 Console.ReadKey();
             }
